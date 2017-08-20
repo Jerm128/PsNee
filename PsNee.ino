@@ -208,6 +208,7 @@ void NTSC_fix() {
 
 void setup()
 {
+  OSCCAL += -7;
   pinMode(data, INPUT);
   pinMode(gate_wfck, INPUT);
   pinMode(subq, INPUT); // PSX subchannel bits
