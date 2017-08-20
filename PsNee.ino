@@ -33,7 +33,7 @@
 //  - ATtiny based > for minimal installs
 
 //#define ARDUINO_BOARD
-//#define ATTINY_X5
+#define ATTINY_X5
 
 //#define APPLY_PSONE_PAL_BIOS_PATCH
 
@@ -401,9 +401,9 @@ start:
     // inject symbols now. 2 x 3 runs seems optimal to cover all boards
     for (byte loop_counter = 0; loop_counter < 2; loop_counter++)
     {
-      inject_SCEX('e'); // e = SCEE, a = SCEA, i = SCEI
+      inject_SCEX('a'); // e = SCEE, a = SCEA, i = SCEI
       inject_SCEX('a'); // injects all 3 regions by default
-      inject_SCEX('i'); // optimize boot time by sending only your console region letter (all 3 times per loop)
+      inject_SCEX('a'); // optimize boot time by sending only your console region letter (all 3 times per loop)
     }
 
     if (!pu22mode) {
